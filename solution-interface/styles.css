@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.draggable {
+    width: 100px;
+    height: 50px;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #000;
+    cursor: grab;
+}
+
+.droppable {
+    width: 150px;
+    height: 150px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #000;
+}
