@@ -1,267 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jQuery UI Droppable - Check Dropped Items</title>
-    <!-- Correct order: jQuery first, then jQuery UI -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery -->
-    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script> <!-- jQuery UI -->
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
-    <style>
-    /* Styling for Body: Centering the content and using flexbox for layout */
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        height: 100vh;
-        font-family: Arial, sans-serif;
-        padding: 20px;
-    }
-
-    /* Container for Droppable Boxes (Left side) */
-    .droppables-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for each big and normal drop area */
-        gap: 20px;
-        width: 50%;
-    }
-
-    /* Container for Draggable Items (Right side) */
-    .draggables-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        width: 50%;
-    }
-
-    /* Styling for Draggable items */
-    .draggable {
-        text-align: center;
-        line-height: 50px;
-        border: 1px solid #000;
-        cursor: grab;
-    }
-
-    /* Big Draggable items */
-    .big-draggable {
-        width: 150px;
-        height: 150px;
-        background-color: lightblue;
-    }
-
-    /* Normal Draggable items */
-    .normal-draggable {
-        width: 100px;
-        height: 100px;
-        background-color: lightgreen;
-    }
-
-    /* Styling for Droppable boxes */
-    .droppable {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px dashed #000;
-        min-height: 150px;
-        width: 150px;
-        background-color: lightgray;
-    }
-
-    /* Big Droppable boxes */
-    .big-droppable {
-        width: 200px;
-        height: 200px;
-        background-color: lightyellow;
-    }
-
-    /* Normal Droppable boxes */
-    .normal-droppable {
-        width: 150px;
-        height: 150px;
-        background-color: lightgray;
-    }
-
-    /* Highlight Droppable boxes when item is dropped */
-    .ui-state-highlight {
-        background-color: lightgreen !important;
-    }
-
-    /* Button Styling */
-    .check-button {
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: lightblue;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-    }
-    </style>
-    <script>
-    $(function() {
-        // Make all the draggable items draggable without snap back
-        $(".draggable").draggable({
-            //revert: "invalid"  // Prevent snapping back when dropped
-        });
-
-        // Make all droppables
-        $(".droppable").droppable({
-            accept: ".draggable",  // Only accept items with class "draggable"
-            drop: function(event, ui) {
-                const droppedItemId = ui.helper[0].id; // Get the ID of the dragged item
-                const expectedId = $(this).data('expected-id'); // Get the expected ID for this droppable
-                
-                // If the dropped item matches the expected ID, mark as correct
-                if (droppedItemId === expectedId) {
-                    $(this).addClass("ui-state-highlight").find("p").html("Correctly Dropped!");
-                } else {
-                    $(this).removeClass("ui-state-highlight").find("p").html("Incorrect Drop!");
-                }
-                // Store the dropped item id to prevent it from being dropped again into the wrong place
-                $(this).data('dropped', droppedItemId);
-            },
-            out: function(event, ui) {
-                // Reset the droppable box when draggable is removed
-                $(this).removeClass("ui-state-highlight").find("p").html("Drop Here");
-                $(this).data('dropped', null);  // Clear the stored data
-            }
-        });
-
-        // Check button functionality
-        $(".check-button").click(function() {
-            let correct = true;
-
-            // Check if each normal droppable has the correct draggable
-            $(".normal-droppable").each(function() {
-                const expectedId = $(this).data('expected-id');
-                const droppedItemId = $(this).data('dropped');
-                if (droppedItemId !== expectedId) {
-                    correct = false;
-                    $(this).css('border', '2px solid red'); // Highlight incorrect droppable
-                } else {
-                    $(this).css('border', '2px solid green'); // Highlight correct droppable
-                }
-            });
-
-            // Check if each big droppable has the correct draggable
-            $(".big-droppable").each(function() {
-                const expectedId = $(this).data('expected-id');
-                const droppedItemId = $(this).data('dropped');
-                if (droppedItemId !== expectedId) {
-                    correct = false;
-                    $(this).css('border', '2px solid red'); // Highlight incorrect droppable
-                } else {
-                    $(this).css('border', '2px solid green'); // Highlight correct droppable
-                }
-            });
-
-            // Display a message based on the result
-            if (correct) {
-                alert("All items are correctly placed!");
-            } else {
-                alert("Some items are not placed correctly!");
-            }
-        });
-    });
-    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Droppable - Check Dropped Items</title>
+  <!-- Correct order: jQuery first, then jQuery UI -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery -->
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script> <!-- jQuery UI -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script> <!-- External JS file -->
 </head>
 <body>
 
-    <!-- Container for Droppable Boxes (Left side) -->
-    <div class="droppables-container">
-        <!-- Big Droppable Boxes (Each has 3 normal droppables below it) -->
-        <div class="droppable-column">
-            <div id="big-droppable-1" class="droppable big-droppable" data-expected-id="big-draggable-1">
-                <p>Big Drop 1</p>
-            </div>
-            <div id="normal-droppable-1" class="droppable normal-droppable" data-expected-id="normal-draggable-1">
-                <p>Drop Here 1</p>
-            </div>
-            <div id="normal-droppable-2" class="droppable normal-droppable" data-expected-id="normal-draggable-2">
-                <p>Drop Here 2</p>
-            </div>
-            <div id="normal-droppable-3" class="droppable normal-droppable" data-expected-id="normal-draggable-3">
-                <p>Drop Here 3</p>
-            </div>
-        </div>
+  <!-- Container for Droppable Boxes (Single column) -->
+  <div class="droppables-container">
+    <!-- Single set of droppables (1 Big and 3 Normal) -->
+    <div class="droppable-column">
+      <div id="big-droppable-1" class="droppable big-droppable">
+        <p>Drop Big Here</p>
+      </div>
+      <div id="normal-droppable-1" class="droppable normal-droppable">
+        <p>Drop Normal 1 Here</p>
+      </div>
+      <div id="normal-droppable-2" class="droppable normal-droppable">
+        <p>Drop Normal 2 Here</p>
+      </div>
+      <div id="normal-droppable-3" class="droppable normal-droppable">
+        <p>Drop Normal 3 Here</p>
+      </div>
+    </div>
+  </div>
 
-        <div class="droppable-column">
-            <div id="big-droppable-2" class="droppable big-droppable" data-expected-id="big-draggable-2">
-                <p>Big Drop 2</p>
-            </div>
-            <div id="normal-droppable-4" class="droppable normal-droppable" data-expected-id="normal-draggable-4">
-                <p>Drop Here 4</p>
-            </div>
-            <div id="normal-droppable-5" class="droppable normal-droppable" data-expected-id="normal-draggable-5">
-                <p>Drop Here 5</p>
-            </div>
-            <div id="normal-droppable-6" class="droppable normal-droppable" data-expected-id="normal-draggable-6">
-                <p>Drop Here 6</p>
-            </div>
-        </div>
-
-        <div class="droppable-column">
-            <div id="big-droppable-3" class="droppable big-droppable" data-expected-id="big-draggable-3">
-                <p>Big Drop 3</p>
-            </div>
-            <div id="normal-droppable-7" class="droppable normal-droppable" data-expected-id="normal-draggable-7">
-                <p>Drop Here 7</p>
-            </div>
-            <div id="normal-droppable-8" class="droppable normal-droppable" data-expected-id="normal-draggable-8">
-                <p>Drop Here 8</p>
-            </div>
-            <div id="normal-droppable-9" class="droppable normal-droppable" data-expected-id="normal-draggable-9">
-                <p>Drop Here 9</p>
-            </div>
-        </div>
+  <!-- Container for Draggable Boxes (All cards remain in the deck) -->
+  <div class="draggables-container">
+    <!-- Chapter 1 Draggables -->
+    <div id="big-draggable-1" class="draggable big-draggable" data-chapter="1">
+      <p>Big Drag 1</p>
+    </div>
+    <div id="normal-draggable-1" class="draggable normal-draggable" data-chapter="1">
+      <p>Normal Drag 1</p>
+    </div>
+    <div id="normal-draggable-2" class="draggable normal-draggable" data-chapter="1">
+      <p>Normal Drag 2</p>
+    </div>
+    <div id="normal-draggable-3" class="draggable normal-draggable" data-chapter="1">
+      <p>Normal Drag 3</p>
     </div>
 
-    <!-- Container for Draggable Boxes (Right side) -->
-    <div class="draggables-container">
-        <!-- Big Draggable Items -->
-        <div id="big-draggable-1" class="draggable big-draggable">
-            <p>Big Drag 1</p>
-        </div>
-        <div id="big-draggable-2" class="draggable big-draggable">
-            <p>Big Drag 2</p>
-        </div>
-        <div id="big-draggable-3" class="draggable big-draggable">
-            <p>Big Drag 3</p>
-        </div>
-
-        <!-- Normal Draggable Items -->
-        <div id="normal-draggable-1" class="draggable normal-draggable">
-            <p>Normal Drag 1</p>
-        </div>
-        <div id="normal-draggable-2" class="draggable normal-draggable">
-            <p>Normal Drag 2</p>
-        </div>
-        <div id="normal-draggable-3" class="draggable normal-draggable">
-            <p>Normal Drag 3</p>
-        </div>
-        <div id="normal-draggable-4" class="draggable normal-draggable">
-            <p>Normal Drag 4</p>
-        </div>
-        <div id="normal-draggable-5" class="draggable normal-draggable">
-            <p>Normal Drag 5</p>
-        </div>
-        <div id="normal-draggable-6" class="draggable normal-draggable">
-            <p>Normal Drag 6</p>
-        </div>
-        <div id="normal-draggable-7" class="draggable normal-draggable">
-            <p>Normal Drag 7</p>
-        </div>
-        <div id="normal-draggable-8" class="draggable normal-draggable">
-            <p>Normal Drag 8</p>
-        </div>
-        <div id="normal-draggable-9" class="draggable normal-draggable">
-            <p>Normal Drag 9</p>
-        </div>
+    <!-- Chapter 2 Draggables -->
+    <div id="big-draggable-2" class="draggable big-draggable" data-chapter="2">
+      <p>Big Drag 2</p>
+    </div>
+    <div id="normal-draggable-4" class="draggable normal-draggable" data-chapter="2">
+      <p>Normal Drag 4</p>
+    </div>
+    <div id="normal-draggable-5" class="draggable normal-draggable" data-chapter="2">
+      <p>Normal Drag 5</p>
+    </div>
+    <div id="normal-draggable-6" class="draggable normal-draggable" data-chapter="2">
+      <p>Normal Drag 6</p>
     </div>
 
-    <!-- Check Button -->
-    <button class="check-button">Check Placement</button>
+    <!-- Chapter 3 Draggables -->
+    <div id="big-draggable-3" class="draggable big-draggable" data-chapter="3">
+      <p>Big Drag 3</p>
+    </div>
+    <div id="normal-draggable-7" class="draggable normal-draggable" data-chapter="3">
+      <p>Normal Drag 7</p>
+    </div>
+    <div id="normal-draggable-8" class="draggable normal-draggable" data-chapter="3">
+      <p>Normal Drag 8</p>
+    </div>
+    <div id="normal-draggable-9" class="draggable normal-draggable" data-chapter="3">
+      <p>Normal Drag 9</p>
+    </div>
+  </div>
+
+  <!-- Button to get a random card -->
+  <button id="random-card-btn">Get Random Card</button>
+
+  <!-- Check Button -->
+  <button class="check-button">Check Placement</button>
 
 </body>
 </html>

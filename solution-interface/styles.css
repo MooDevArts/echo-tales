@@ -1,29 +1,87 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
-    flex-direction: column;
-    gap: 20px;
     font-family: Arial, sans-serif;
+    padding: 20px;
 }
 
+/* Container for Droppable Boxes (Left side) */
+.droppables-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for each big and normal drop area */
+    gap: 20px;
+    width: 50%;
+}
+
+/* Container for Draggable Items (Right side) */
+.draggables-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 50%;
+}
+
+/* Styling for Draggable items */
 .draggable {
-    width: 100px;
-    height: 50px;
-    background-color: lightblue;
     text-align: center;
     line-height: 50px;
     border: 1px solid #000;
     cursor: grab;
 }
 
+/* Big Draggable items */
+.big-draggable {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+}
+
+/* Normal Draggable items */
+.normal-draggable {
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+}
+
+/* Styling for Droppable boxes */
 .droppable {
-    width: 150px;
-    height: 150px;
-    background-color: lightgray;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px dashed #000;
+    min-height: 150px;
+    width: 150px;
+    background-color: lightgray;
+}
+
+/* Big Droppable boxes */
+.big-droppable {
+    width: 150px;
+    height: 150px;
+    background-color: lightyellow;
+}
+
+/* Normal Droppable boxes */
+.normal-droppable {
+    width: 150px;
+    height: 150px;
+    background-color: lightgray;
+}
+
+/* Highlight Droppable boxes when item is dropped */
+.ui-state-highlight {
+    background-color: lightgreen !important;
+}
+
+/* Button Styling */
+.check-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: lightblue;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
 }
