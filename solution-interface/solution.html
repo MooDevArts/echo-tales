@@ -3,17 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solution Interface</title>
+    <title>Solution Page</title>
     <link rel="stylesheet" href="solution.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Megrim&family=Micro+5&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Solution Interface</h1>
-    <p>
-      We want it for a mobile primararily. Let us use this page to figure it out
-    </p>
-    <a href="/">
-      <button>Back</button>
-    </a>
-    <script src="./solution.js"></script>
+    <h1>Echo Tales | Lost</h1>
+    <div class="content">
+      <div class="left">
+        <div class="card"><p>Chaper</p></div>
+        <div class="card"><p>Fragment</p></div>
+        <div class="card"><p>Fragment</p></div>
+        <div class="card"><p>Fragment</p></div>
+      </div>
+      <div class="right">
+        <div class="scanner">
+          <h2>Scan <br />QR code</h2>
+          <img src="../public/images/QR Code.png" />
+          <button>SCAN</button>
+        </div>
+        <div class="audio">
+          <audio controls>
+            <source
+              src="../public/sounds/103330__jamalboi101__space-hat.mp3"
+              type="audio/mpeg"
+            />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <button>Check</button>
+      </div>
+    </div>
   </body>
 </html>
