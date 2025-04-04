@@ -1,14 +1,12 @@
 body {
-<<<<<<< HEAD
     background-image: url("./public/images/phone\ 2\ 1.png");
-=======
->>>>>>> 9c987c3c3d3735b3d4697c7c0a35e81388c2f107
     display: flex;
     justify-content: center;
     align-items: flex-start;
     height: 100vh;
     font-family: Arial, sans-serif;
     padding: 20px;
+    position: relative;
 }
 
 /* Container for Droppable Boxes (Left side) */
@@ -28,6 +26,39 @@ body {
     width: 50%;
 }
 
+.audio-wrapper{
+    border: 3px solid red;
+    position: absolute;
+    top: 50%;
+    right: 1rem;;
+}
+
+.audio-initial{
+    display: none;
+}
+
+.draggables-container > *{
+    position: absolute;
+}
+
+.progress-bar{
+    margin: 0;
+    border: 1px solid red;
+    min-width: calc(80vw);
+    height: 5px;
+    position: absolute;
+    top: 1rem;
+    left: 5vw;
+    display: flex;
+    gap: 1rem
+}
+
+.green{
+    background-color: lightgreen;
+    width: 33%;
+    display: none;
+}
+
 /* Styling for Draggable items */
 .draggable {
     text-align: center;
@@ -38,27 +69,17 @@ body {
 
 /* Big Draggable items */
 .big-draggable {
-<<<<<<< HEAD
     width: 70px;
     height: 130px;
-=======
-    width: 100px;
-    height: 100px;
->>>>>>> 9c987c3c3d3735b3d4697c7c0a35e81388c2f107
     background-color: lightblue;
 }
 
 /* Normal Draggable items */
 .normal-draggable {
-<<<<<<< HEAD
     font-size: 10px;
     line-height: 50px;
     width: 70px;
     height: 130px;
-=======
-    width: 100px;
-    height: 100px;
->>>>>>> 9c987c3c3d3735b3d4697c7c0a35e81388c2f107
     background-color: lightgreen;
 }
 
@@ -67,7 +88,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
     border: 3px dashed #807FBF;
     min-height: 50px;
     width: 50px;
@@ -75,38 +95,20 @@ body {
     background: #1a153568 ;
     margin-top: 20px;
     margin-left: 10px;   
-=======
-    border: 2px dashed #000;
-    min-height: 150px;
-    width: 150px;
-    background-color: lightgray;
->>>>>>> 9c987c3c3d3735b3d4697c7c0a35e81388c2f107
 }
 
 /* Big Droppable boxes */
 .big-droppable {
-<<<<<<< HEAD
     width: 100px;
     height: 150px;
     border: 3px dashed #807FBF;
-=======
-    width: 150px;
-    height: 150px;
-    background-color: lightyellow;
->>>>>>> 9c987c3c3d3735b3d4697c7c0a35e81388c2f107
 }
 
 /* Normal Droppable boxes */
 .normal-droppable {
-<<<<<<< HEAD
     width: 100px;
     height: 150px;
     background: #1a153568 ;
-=======
-    width: 150px;
-    height: 150px;
-    background-color: lightgray;
->>>>>>> 9c987c3c3d3735b3d4697c7c0a35e81388c2f107
 }
 
 /* Highlight Droppable boxes when item is dropped */
@@ -116,7 +118,6 @@ body {
 
 /* Button Styling */
 .check-button {
-<<<<<<< HEAD
     position: absolute;
     font-family: "Micro 5", sans-serif;
     text-transform: capitalize;
@@ -159,12 +160,4 @@ body {
     position: absolute;
     top:200px;
     left:230px;
-=======
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: lightblue;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
->>>>>>> 9c987c3c3d3735b3d4697c7c0a35e81388c2f107
 }

@@ -7,19 +7,22 @@
   <!-- Correct order: jQuery first, then jQuery UI -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery -->
   <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script> <!-- jQuery UI -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script> <!-- Touch Punch -->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="styles.css">
-<<<<<<< HEAD
  
-=======
-  <script src="script.js"></script> <!-- External JS file -->
->>>>>>> 9c987c3c3d3735b3d4697c7c0a35e81388c2f107
 </head>
 <body>
 
+  <div class="progress-bar">
+    <div id="pb1" class="green"></div>
+    <div id="pb2" class="green"></div>
+    <div id="pb3" class="green"></div>
+
+  </div>
+
   <!-- Container for Droppable Boxes (Single column) -->
   <div class="droppables-container">
-<<<<<<< HEAD
     <!-- Droppable Boxes (1 Big and 3 Normal) -->
     <div class="droppable-column">
       <div id="big-droppable-1" class="droppable big-droppable" data-expected-id="big-draggable-1">
@@ -33,30 +36,11 @@
       </div>
       <div id="normal-droppable-3" class="droppable normal-droppable" data-expected-id="normal-draggable-3">
         <p>Drop Here 3</p>
-=======
-    <!-- Single set of droppables (1 Big and 3 Normal) -->
-    <div class="droppable-column">
-      <div id="big-droppable-1" class="droppable big-droppable">
-        <p>Drop Big Here</p>
-      </div>
-      <div id="normal-droppable-1" class="droppable normal-droppable">
-        <p>Drop Normal 1 Here</p>
-      </div>
-      <div id="normal-droppable-2" class="droppable normal-droppable">
-        <p>Drop Normal 2 Here</p>
-      </div>
-      <div id="normal-droppable-3" class="droppable normal-droppable">
-        <p>Drop Normal 3 Here</p>
->>>>>>> 9c987c3c3d3735b3d4697c7c0a35e81388c2f107
       </div>
     </div>
   </div>
 
-<<<<<<< HEAD
   <!-- Container for Draggable Boxes (All cards are in the deck but hidden) -->
-=======
-  <!-- Container for Draggable Boxes (All cards remain in the deck) -->
->>>>>>> 9c987c3c3d3735b3d4697c7c0a35e81388c2f107
   <div class="draggables-container">
     <!-- Chapter 1 Draggables -->
     <div id="big-draggable-1" class="draggable big-draggable" data-chapter="1">
@@ -101,9 +85,57 @@
     </div>
   </div>
 
-<<<<<<< HEAD
-  <!-- Button to get a random card from the current chapter -->
-  <button id="random-card-btn">Get Random Card</button>
+  <div class="audio-wrapper">
+    <audio id="audio-1" class="audio-initial" controls>
+      <source src="./public/audio/sound (1).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-2" class="audio-initial" controls>
+      <source src="./public/audio/sound (2).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-3" class="audio-initial" controls>
+      <source src="./public/audio/sound (3).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-4" class="audio-initial" controls>
+      <source src="./public/audio/sound (4).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-5" class="audio-initial" controls>
+      <source src="./public/audio/sound (5).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-6" class="audio-initial" controls>
+      <source src="./public/audio/sound (6).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-7" class="audio-initial" controls>
+      <source src="./public/audio/sound (7).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-8" class="audio-initial" controls>
+      <source src="./public/audio/sound (8).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-9" class="audio-initial" controls>
+      <source src="./public/audio/sound (9).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-10" class="audio-initial" controls>
+      <source src="./public/audio/sound (10).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-11" class="audio-initial" controls>
+      <source src="./public/audio/sound (11).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audio-12" class="audio-initial" controls>
+      <source src="./public/audio/sound (12).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  
 
   <!-- Check Button -->
   <button class="check-button">Check</button>
@@ -116,13 +148,5 @@
   </div>
 
   <script type="module" src="./script.js"></script>
-=======
-  <!-- Button to get a random card -->
-  <button id="random-card-btn">Get Random Card</button>
-
-  <!-- Check Button -->
-  <button class="check-button">Check Placement</button>
-
->>>>>>> 9c987c3c3d3735b3d4697c7c0a35e81388c2f107
 </body>
 </html>
