@@ -1,0 +1,316 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./public/images/phone.png");
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    font-family: "Micro 5", sans-serif;
+    font-size: 18px;
+    padding: 20px;
+    position: relative;
+}
+
+button{
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.scanner p{
+    display: none;
+}
+/* Container for Droppable Boxes (Left side) */
+.droppables-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for each big and normal drop area */
+    gap: 20px;
+    width: 50%;
+    margin-top: 3.6rem;
+}
+
+/* Container for Draggable Items (Right side) */
+.draggables-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 50%;
+    position: absolute;
+    top: 7.5rem;
+    right: 0.1rem;
+}
+
+.audio-wrapper{
+    position: absolute;
+    top: 52%;
+    right: 1rem;;
+}
+
+audio{
+    width: 150px;
+    height: 50px;
+}
+
+.audio-initial{
+    display: none;
+}
+
+.draggables-container > *{
+    position: absolute;
+}
+
+.progress-bar{
+    margin: 0;
+    border: 1px solid #807FBF;
+    border-radius: 16px;
+    min-width: calc(80vw);
+    height: 10px;
+    position: absolute;
+    top: 4.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    background-color: grey;
+    overflow: hidden;
+
+}
+
+.green{
+    background-color: lightgreen;
+    width: 33%;
+    display: none;
+}
+
+/* Styling for Draggable items */
+.draggable {
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #000;
+    cursor: grab;
+}
+
+
+
+/* Big Draggable items */
+.big-draggable {
+    width: 70px;
+    height: 130px;
+    background-color: lightblue;
+}
+
+/* Normal Draggable items */
+.normal-draggable {
+    font-size: 10px;
+    line-height: 50px;
+    width: 70px;
+    height: 130px;
+    background-color: lightgreen;
+}
+
+/* Styling for Droppable boxes */
+.droppable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed #807FBF;
+    min-height: 50px;
+    width: 50px;
+    backdrop-filter: blur(2px);
+    background: #1a153568 ;
+    margin-top: 20px;
+    margin-left: 10px;   
+}
+
+/* Big Droppable boxes */
+.big-droppable {
+    width: 100px;
+    height: 150px;
+    border: 3px dashed #807FBF;
+}
+
+/* Normal Droppable boxes */
+.normal-droppable {
+    width: 100px;
+    height: 150px;
+    background: #1a153568 ;
+}
+
+/* Highlight Droppable boxes when item is dropped */
+.ui-state-highlight {
+    background-color: lightgreen !important;
+}
+
+/* Button Styling */
+.check-button {
+    position: absolute;
+    font-family: "Micro 5", sans-serif;
+    text-transform: capitalize;
+    background-color: #606060BF;
+    border: 1px solid white;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    right:2.5rem;
+    top:500px;
+    color: white;
+    border-radius: 5px;
+    font-size: 24px;
+    text-align: center;
+}
+
+h1{
+    font-family: Megrim;
+    font-weight: 400;
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.scanner{
+    z-index: -10;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 3px dashed #807FBF;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+    background: #1a153568 ;
+    color:white;
+    right: 1.8rem;
+    top: 6rem;
+    width: 8rem;
+    height: 13rem;
+}
+
+/* chage here to change card */
+.draggables-container > *{
+    width: 90px;
+    height: 150px;
+    
+}
+
+video{
+    object-fit: cover;
+}
+
+.scanner h2{
+    font-size: 10px;
+}
+
+.scanner p{
+    font-size: 10px;
+}
+
+#random-card-btn{
+    position: absolute;
+    top:200px;
+    left:230px;
+}
+
+#switchCamera{
+    position: relative;
+    margin-top: 100%;
+    margin-left: 10px;
+}
+
+/* cards */
+
+
+
+#big-draggable-1{
+
+    background-image: url(./public/images/Chapter1/Chapter1.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#big-draggable-2{
+
+    background-image: url(./public/images/Chapter2/Chapter2.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#big-draggable-3{
+
+    background-image: url(./public/images/Chapter3/Chapter3.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-1{
+    background-image: url(./public/images/Chapter1/Ch1f1.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-2{
+    background-image: url(./public/images/Chapter1/Ch1f2.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-3{
+    background-image: url(./public/images/Chapter1/Ch1f3.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+
+#normal-draggable-4{
+    background-image: url(./public/images/Chapter2/Ch2f1.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-5{
+    background-image: url(./public/images/Chapter2/Ch2f2.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-6{
+    background-image: url(./public/images/Chapter2/Ch2f3.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-7{
+    background-image: url(./public/images/Chapter3/Ch3f1.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-8{
+    background-image: url(./public/images/Chapter3/Ch3f2.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-9{
+    background-image: url(./public/images/Chapter3/Ch3f3.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
