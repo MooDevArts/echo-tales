@@ -1,0 +1,106 @@
+
+@font-face {
+    font-family: 'Maggin';
+    src: url('path-to-maggin-font.woff2') format('woff2'),
+         url('path-to-maggin-font.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+ 
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Maggin', sans-serif;
+    background-color: #000;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('background 1.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+  .logo {
+    font-family: 'Maggin', sans-serif; /* From Figma */
+    font-size: 26px;                  
+    font-weight: 500;                
+    letter-spacing: 0.33em;           
+    line-height: 1.2;                 
+    text-align: center;
+    color: #8599bd;                   
+    text-transform: uppercase;
+    margin: 0 auto 30px;
+    padding: 8px 0;
+  }
+  
+  
+  .tagline {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+    line-height: 1;
+  }
+  
+  .play-button {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 30px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Maggin', sans-serif; 
+    font-weight: 500;                
+  }
+  
+  .play-button:hover {
+    background: white;
+    color: rgb(16, 126, 216);
+  }
+  
+  .game-image {
+    margin: 10px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  }
+  
+  .game-image img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+    border: 2px solid rgba(6, 47, 50, 0.1);
+  }
+  
+  .description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .aaa {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: #83a4e2;
+  }
+  
+  .separator {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    width: 80%;
+    margin: 0 auto 25px;
+  }
