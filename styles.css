@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: url('images/backgrounddd.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+.header {
+    font-family: "Megrim", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26px;
+  line-height: 1; 
+  letter-spacing: 0.25em; 
+  text-transform: capitalize; 
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+
+.sub-header {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+}
+
+.section {
+  display: flex;
+  justify-content:space-evenly;
+  align-items:center;
+  margin: 40px 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto; 
+  gap: 1rem;
+}
+
+.section.reverse {
+  flex-direction: row-reverse;
+}
+
+.card {
+  background: #5c48f2;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  margin: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+
+
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.description-box {
+  width: 300px;
+  background: rgba(7, 46, 97, 0.6);
+  padding: 20px;
+  border-radius: 12px;
+  color: rgb(206, 170, 227);
+  text-align: left;
+  font-size: 1em;
+  line-height: 1.6;
+  box-shadow: 0 0 10px rgba(124, 104, 238, 0.6); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  opacity:0.8;
+  letter-spacing:2.6px;
+  box-sizing: border-box;
+
+  
+ 
+}
+
+.start-button {
+  background: linear-gradient(90deg, #7b61ff, #b48eff);
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  padding: 15px 40px;
+  border-radius: 10px;
+  margin: 60px auto;
+  cursor: pointer;
+}
