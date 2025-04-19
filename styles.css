@@ -61,7 +61,7 @@ button{
 
 .audio-wrapper{
     position: absolute;
-    top: 60%;
+    top: 55%;
     right: 1.2rem;;
 }
 
@@ -185,7 +185,25 @@ audio{
     height:41px;
     width:149px;
     right:2.5rem;
-    top:85vh;
+    top:97vh;
+}
+
+.check-button2 {
+    position: absolute;
+    font-family: "Micro 5", sans-serif;
+    text-transform: capitalize;
+    background: rgba(69, 67, 84, 0.75);
+    border: 1px dashed #a45dff;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    color: #a45dff;
+    border-radius: 15px;
+    font-size: 24px;
+    text-align: center;
+    height:41px;
+    width:149px;
+    right:2.5rem;
+    top:97vh;
 }
 
 h1{
@@ -357,5 +375,23 @@ video{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.chapter-listen{
+    color: white;
+    display: flex;
+    position: absolute;
+    top: 70%;
+    flex-direction: column;
+    right: 1.2rem;
+    
+}
+
+.audio-initial2{
+    display: none;
+    transform: scale(1.07);
+    transform-origin: top left;
+    width: 250px;
+    margin-bottom: 10px;
 }
 

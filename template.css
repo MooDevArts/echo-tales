@@ -140,7 +140,7 @@ h1{
     position: absolute;
     color: white;
     top:10%;
-    left:30%;
+    left:33%;
     font-size: 24px;
 }
 
@@ -239,8 +239,10 @@ h1{
 
 .phoneExample{
     position: absolute;
-    top:95%;
-    left: 1%;
+    top:105%;
+    left: 6%;
+    width:384px;
+    height: 596px;
 }
 
 .instructionlist{

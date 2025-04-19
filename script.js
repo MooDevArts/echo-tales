@@ -194,6 +194,10 @@ $(function () {
     },
   });
 
+  $("#solve").click(function () {
+    window.location.href = "/ChapterSolution.html";
+  });
+
   $(".check-button").click(function () {
     let currentPlacement = {
       "big-droppable-1": $("#big-droppable-1").data("dropped"),
@@ -237,6 +241,14 @@ $(function () {
   });
 
   function completeChapter(chapter) {
+    //alert(`Chapter ${chapter} is complete!`);
+    if(chapter === 1){
+      document.getElementById("audio-13").style.display="block";
+    } else if (chapter === 2){
+      document.getElementById("audio-14").style.display="block";
+    } else if (chapter === 3){
+      document.getElementById("audio-15").style.display="block";
+    }
     $(".draggable[data-chapter='" + chapter + "']").each(function () {
       $(this).draggable("disable").css({
         opacity: "0",
@@ -248,9 +260,15 @@ $(function () {
     resetDroppables();
 
     if (unsolvedChapters.length === 0) {
-      window.location.href = "/ChapterSolution.html";
-      $("#random-card-btn").prop("disabled", true);
+      //window.location.href = "/ChapterSolution.html";
+      document.getElementById("check").style.display="none";
+      document.getElementById("solve").style.display ="block"
       $(".check-button").prop("disabled", true);
+      document.getElementById("solve").disabled = false;
     }
+
+
   }
+
+  
 });
