@@ -1,0 +1,397 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./public/images/phone.png");
+    background-size: cover;  
+    background-position: center;  
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    font-family: "Micro 5", sans-serif;
+    font-size: 18px;
+    padding: 20px;
+    position: relative;
+}
+
+button{
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.scanner p{
+    display: none;
+}
+/* Container for Droppable Boxes (Left side) */
+.droppables-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for each big and normal drop area */
+    position: absolute;
+    top:15%;
+    left: 0.1rem;
+    gap: 20px;
+    width: 50%;
+    color: #FFF;
+    text-align: center;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-family: 'Mina', sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0%; /* 0px */
+    letter-spacing: 3px;
+    text-transform: capitalize;
+}
+
+/* Container for Draggable Items (Right side) */
+.draggables-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 50%;
+    position: absolute;
+    top: 7.5rem;
+    right: 0.1rem;
+}
+
+.audio-wrapper{
+    position: absolute;
+    top: 55%;
+    right: 1.2rem;;
+}
+
+audio{
+    width: 250px;
+    transform-origin: top left; 
+    height: 40px; 
+}
+
+.audio-initial{
+    display: none;
+    transform: scale(1.07);
+    transform-origin: top left;
+    width: 250px;
+}
+
+.draggables-container > *{
+    position: absolute;
+}
+
+.progress-bar{
+    margin: 0;
+    border: 1px solid #807FBF;
+    border-radius: 16px;
+    min-width: calc(75vw);
+    height: 10px;
+    position: absolute;
+    top: 4.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100px;
+    display: flex;
+    gap: 1rem;
+    background: rgba(112, 111, 144, 0.60);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.40) inset;
+    overflow: hidden;
+
+}
+
+.green{
+    background-color: lightgreen;
+    width: 33%;
+    display: none;
+}
+
+/* Styling for Draggable items */
+.draggable {
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #000;
+    cursor: grab;
+}
+
+
+
+/* Big Draggable items */
+.big-draggable {
+    width: 70px;
+    height: 130px;
+    background-color: lightblue;
+}
+
+/* Normal Draggable items */
+.normal-draggable {
+    font-size: 10px;
+    line-height: 50px;
+    width: 70px;
+    height: 130px;
+    background-color: lightgreen;
+}
+
+/* Styling for Droppable boxes */
+.droppable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed #807FBF;
+    min-height: 50px;
+    width: 50px;
+    backdrop-filter: blur(2px);
+    background: #1a153568 ;
+    margin-top: 20px;
+    margin-left: 10px;   
+}
+
+/* Big Droppable boxes */
+.big-droppable {
+    width: 100px;
+    height: 150px;
+    border: 3px dashed #681DC9;
+    background-color: #8C8CC1;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0px #9DB3CE inset;
+}
+
+/* Normal Droppable boxes */
+.normal-droppable {
+    width: 100px;
+    height: 150px;
+    background: #1a153568 ;
+}
+
+/* Highlight Droppable boxes when item is dropped */
+.ui-state-highlight {
+    background-color: lightgreen !important;
+}
+
+/* Button Styling */
+.check-button {
+    position: absolute;
+    font-family: "Micro 5", sans-serif;
+    text-transform: capitalize;
+    background: rgba(69, 67, 84, 0.75);
+    border: 1px dashed #a45dff;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    color: #a45dff;
+    border-radius: 15px;
+    font-size: 24px;
+    text-align: center;
+    height:41px;
+    width:149px;
+    right:2.5rem;
+    top:97vh;
+}
+
+.check-button2 {
+    position: absolute;
+    font-family: "Micro 5", sans-serif;
+    text-transform: capitalize;
+    background: rgba(69, 67, 84, 0.75);
+    border: 1px dashed #a45dff;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    color: #a45dff;
+    border-radius: 15px;
+    font-size: 24px;
+    text-align: center;
+    height:41px;
+    width:149px;
+    right:2.5rem;
+    top:97vh;
+}
+
+h1{
+    font-family: Megrim;
+    font-weight: 400;
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: 6.5px;
+}
+
+.scanner{
+     z-index: -10;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 10px;
+    border: 3px solid #8C8CC1;
+    background: rgba(26, 21, 53, 0.60);
+    box-shadow: 0px 4px 8px 0px #9DB3CE inset;
+    backdrop-filter: blur(2px);
+    color:white;
+    right: 1.8rem;
+    top: 6rem;
+    width: 8rem;
+    height: 13rem;
+}
+
+/* chage here to change card */
+.draggables-container > *{
+    width: 90px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+video{
+    object-fit: cover;
+}
+
+.scanner h2{
+    font-size: 10px;
+}
+
+.scanner p{
+    font-size: 10px;
+}
+
+#random-card-btn{
+    position: absolute;
+    top:200px;
+    left:230px;
+}
+
+#switchCamera{
+    position: relative;
+    margin-top: 100%;
+    margin-left: 10px;
+}
+
+/* cards */
+
+
+
+#big-draggable-1{
+
+    background-image: url(./public/images/Chapter1/Chapter1.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#big-draggable-2{
+
+    background-image: url(./public/images/Chapter2/Chapter2.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#big-draggable-3{
+
+    background-image: url(./public/images/Chapter3/Chapter3.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-1{
+    background-image: url(./public/images/Chapter1/ch1f1.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-2{
+    background-image: url(./public/images/Chapter1/ch1f2.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-3{
+    background-image: url(./public/images/Chapter1/ch1f3.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+
+#normal-draggable-4{
+    background-image: url(./public/images/Chapter2/ch2f1.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-5{
+    background-image: url(./public/images/Chapter2/ch2f2.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-6{
+    background-image: url(./public/images/Chapter2/ch2f3.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-7{
+    background-image: url(./public/images/Chapter3/Ch3f1.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-8{
+    background-image: url(./public/images/Chapter3/ch3f2.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+#normal-draggable-9{
+    background-image: url(./public/images/Chapter3/ch3f3.jpeg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+.switch-camera{
+    position: absolute;
+    left: 27%;
+    bottom:7%;
+    background-color: #606060BF;
+    border: 1px solid white;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chapter-listen{
+    color: white;
+    display: flex;
+    position: absolute;
+    top: 70%;
+    flex-direction: column;
+    right: 1.2rem;
+    
+}
+
+.audio-initial2{
+    display: none;
+    transform: scale(1.07);
+    transform-origin: top left;
+    width: 250px;
+    margin-bottom: 10px;
+}
+
